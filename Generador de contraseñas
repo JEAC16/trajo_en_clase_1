@@ -1,0 +1,8 @@
+import random 
+Claves = "+-/*!&$#?=@abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+a = int(input("Cuantos digitos nesecita tu contraseña?"))
+contrasena = ""
+for i in range(a):
+  contrasena +=  random.choice(Claves)
+
+print(f"esta es tu contraseña:  {contrasena}")
