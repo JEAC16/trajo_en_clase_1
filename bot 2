@@ -1,0 +1,26 @@
+import discord
+from discord.ext import commands
+
+permisos=discord.Intents.default()
+permisos.message_content=True
+
+bot=commands.Bot(command_prefix="/",intents=permisos)
+
+@bot.event
+async def on_ready():
+    print(f"El bot llamado {bot.user} esta en linea")
+@bot.command()
+async def des(ctx,*,objeto:str):
+    listaDescomposicion={
+        "botella de plastico": 500,
+        "chicle":10,
+        "vidrio":5000,
+
+    }
+    objeto=objeto.lower()
+    if objeto in listaDescomposicion:
+        await ctx.send(f"El objeto llamado: {objeto} tarda en descomponerse aproximadamente{listaDescomposicion[objeto]} años")
+    else:
+        await ctx.send("No tengo información al respecto")
+
+bot.run("")
