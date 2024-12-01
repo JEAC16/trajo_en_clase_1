@@ -4,3 +4,19 @@ body{
 h1{
     color: darkred;
 }
+label{
+    color: white;
+}
+@keyframes cambio_de_color{
+    0%{
+        background-color: black;
+    }
+    
+    100%{
+        background-color: darkred;
+
+    }
+}
+body{
+    animation: cambio_de_color .1s infinite;
+}
